@@ -33,13 +33,13 @@ public class DungeonTask
 
         //var path = GetMinPath(sumPaths);
 
-        var paths = from exitToChest in pathOnStart
-                    join startToChest in pathOnChestToExit
-                    on exitToChest.Value equals startToChest.Value
-                    select new { exitToChest = exitToChest, startToChest = startToChest, Length = exitToChest.Length + startToChest.Length };
+        //var paths = from exitToChest in pathOnStart
+        //            join startToChest in pathOnChestToExit
+        //            on exitToChest.Value equals startToChest.Value
+        //            select new { exitToChest = exitToChest, startToChest = startToChest, Length = exitToChest.Length + startToChest.Length };
 
-        var path = pathOnStart
-            .Select(g => (  g,  pathOnChestToExit.Where(p => p.Value == g.Value).First() ));
+        //var path = pathOnStart
+        //    .Select(g => (  g,  pathOnChestToExit.Where(p => p.Value == g.Value).First() ));
 
         var path2 = pathOnStart
             .Join(pathOnChestToExit,
